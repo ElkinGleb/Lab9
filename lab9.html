@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phonebook</title>
+</head>
+<body>
+    <h1>Phonebook</h1>
+    <form action="/add" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <h2>Contacts</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+        </tr>
+        {% for contact in contacts %}
+        <tr>
+            <td>{{ contact.name }}</td>
+            <td>{{ contact.phone }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <form action="/clear" method="post">
+    <input type="submit" value="Clear">
+</form>
+</body>
+</html>
